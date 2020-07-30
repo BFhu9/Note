@@ -1,0 +1,270 @@
+1、html【超文本标记语言】 类似于快递上的地址，快递公司根据不同的地址发送目的地
+    1. 普通文本与超文本
+        普通文本
+            纯字符
+        超文本
+		    字符，图片，超链接，视频，音频
+        <h1>hello world</h1>
+        <p>段落</p>
+        <video src="a.mp4"></video>
+        <a href="http://www.baidu.com">百度一下</a>
+
+    2. 浏览器由上而下解析html文件，会将标签自动进行转换，变成浏览器页面元素显示
+
+2、开发环境
+	编辑器
+		vscode、sublime
+	浏览器
+		firefox、chrome、IE
+	服务器
+
+3、B/S架构【浏览器/服务器模式】
+	B Browser浏览器
+	S Server服务器
+
+    手机、电脑的浏览器  <-->  各类网站(服务器)  <-->  数据库(java/python/nodejs)
+    演示资源库
+
+4、html网页
+    1. 编写hello world
+
+	2. 结构
+        doctype 	声明部分 
+			html    Html的根元素，用来包含html文档的所有元素
+				head    不会显示到浏览器视口中
+					title		显示在浏览器选项卡的标题
+					meta 		用于设置元信息，配置
+						charset=utf-8 	
+						编码
+							编辑器 UTF-8
+						解码
+							浏览器
+                        
+                        程序员  编写 
+                        浏览器  解析
+				body
+					网页主体
+
+    3. 基本语法
+		1) 注释 ctrl + /
+			<!--注释-->
+
+		2) 元素组成
+			开始标签、内容(文本或者子标签)、结束标签
+			<div>hello world</div>
+			<div>
+				<span>hello world</span>
+			</div>
+
+		3) 属性
+			在开始标签中可以添加属性
+				<div 属性名=属性值 属性名=属性值>
+                    属性名不区分大小写
+                    <div id="one"></div>
+                    <div ID="one"></div>
+
+			1. 核心属性【绝大多数标签都可以应用的属性】
+				id 			文档内部的唯一标识
+				class 	类
+					<div class="first one">one</div>
+					<div class="first two">two</div>
+					<div class="first three">three</div>
+				title 	描述
+				style 	样式，取值为css规则
+					css规则,键值对，键值之间通过冒号分割，规则之间通过分号分割
+					<div id='one' style="color:#333;backgroud:#ededed"></div>
+
+			2. 特有属性【某些标签特有的】
+				a
+					href
+					target
+				img
+					alt
+					src
+
+		4) 元素分类
+			1. 块级元素
+				作用：作为页面框架，或者容器。是页面的主体
+				特性：
+					1) 独占一行空间
+					2) 默认宽度为100%，默认高度由子元素或者内容决定 
+					3) 可以为其指定宽高 style="width:;height:;" 
+
+					div 	无意义的块元素
+					h1~h3	标题
+						font-size
+						font-weight
+						margin
+					p 		段落
+						margin
+					html
+					body
+						margin
+					ul、li 	无序列表，列表项	
+						ul
+							margin
+							padding
+							list-style
+						li
+					ol、li  	有序列表，列表项
+						ol
+							margin
+							padding
+							list-style
+					dl、dt、dd 	有序列表
+						dl
+							margin
+						dd
+							margin
+
+					H5新增的块元素（语义化标签）
+						header(头)
+						nav
+						article（主体）
+						section (部分)
+						footer（脚）
+                        video
+                        audio
+
+			2. 行内元素
+				作用：点缀网页，填充内容
+				特性：
+					1) 与其他行内元素共享一行空间
+					2) 默认宽高由内容决定
+					3) 不能为其指定宽和高
+					4) 行内元素中不可以嵌套块元素，但块元素中可以嵌套行内元素
+
+				span 	无意义的行内元素
+				a 		超级链接
+					默认样式
+						color
+						text-decoration
+						cursor
+					默认事件（js - dom） 点击事件
+					href
+						url
+						相对路径
+						绝对路径
+						锚点
+
+					target
+						_self   当前页打开
+						_blank  新建选项卡打开
+				img
+					src 	图片地址
+						url     	http://
+						相对路径	
+						绝对路径	file://从根目录开始
+					alt 	图片找不到的时候显示的文本
+
+					<img src="" alt="">
+
+				strong
+				bold
+				b
+				em
+				i
+				sub
+				sup
+				...
+
+			3. 功能元素	（行内元素）
+				1) 表格
+					table
+						【属性】border、width、、、、
+						caption 	表格标题
+						thead 		表头部分
+							tr 
+								th/td
+						tbody 		表格主体部分【不可以省略】
+							tr
+								td/th
+								【属性】colspan、rowspan、width、align
+								td/th中可以放任意子元素
+						tfoot 		表底部分
+							tr
+								td
+					【注意】：每一行中的列数应该是相等
+
+					案例：个人计划表
+
+                    作业：制作个人简历、课表
+
+				2) 表单（前后台交互）
+						用户 -> 表单 -> 后台 -> 数据库
+
+						注册页面
+						登录页面
+						搜索框
+
+						<form action="">
+							input
+							select
+							textarea
+						</form>
+
+						form
+							action 	后台接口地址
+							method 	请求方式
+								get
+									参数拼接在url后面，通过?来分割
+									传递参数较少
+								post
+									参数存放在请求体中，安全
+									传递参数更多
+							enctype 编码方式
+								1. enctype='application/x-www-form-urlencoded'
+									浏览器就会将参数转换为【查询字符串 qs】格式
+									username=tom&password=123321&
+
+								2. multipart/form-data
+									当有附件在表单中的时候，enctype务必设置为这种格式
+
+						input
+							name: 			作为参数中的key
+							value: 			作为参数中的value,在按钮中务必指定value值
+							type:
+								text 		单行文本框
+								password 	密码框
+								submit 		提交按钮
+								radio 		单选按钮
+								checkbox 	复选按钮
+								file 		附件选择器
+							checked 		单值属性	默认选择
+							placeholder     提示语
+
+						select
+							option
+								标签中的文本显示在网页中，提交的值应该是option的value值，当这个值没有设定的时候，提交的是标签中的文本
+								<option value="sx">山西</option>
+
+						textarea
+							多行文本域
+							placeholder 提示语
+
+						第三方库
+							日期插件
+							地址选择器地址
+							附件上传
+							富文本
+
+                3) H5新增
+                    标签
+                        progress 进度条
+                        output 表示用户动作产生的结果
+                        datalist 表示其他控件可用的值
+                    属性
+                        type
+                            date    日期
+                            datetime-local 	日期时间控件
+                            time 	时间控件
+                            number 	数字控件（只能输入数字）
+                            range 	范围控件（通过控制条可以调整取值）
+                            search 	搜索控件
+                            tel 	电话控件
+                            url 	地址控件
+                            color 	颜色控件
+                            email  	email控件
+
+
+
