@@ -1,0 +1,34 @@
+-------------------------------------------------------------
+html4:
+	<div class="outer">
+		<!-- 所有布局最外层框架 -->
+		<div class="center">
+			<!-- 内容框架 -->
+			<div class="head">
+				<div class="top">
+					<div class="top_left"></div>
+					<div class="top_right"></div>
+				</div>
+				<!-- 列级布局 -->
+			</div>       
+			<div class="center"></div>
+			<div class="footer"></div>
+			<!-- 行级布局 -->
+		</div>
+	</div>
+------------------------------------------------------------
+html5:
+<div class="outer">
+	<div class="center">
+		<header id="header" class="">
+			<div class="top">
+				<div class="top_left"></div>
+				<div class="top_right"></div>
+			</div>
+			<!-- 列级布局 -->
+		</header>
+		<!-- /header -->
+		<article></article>
+		<footer></footer>
+	</div>
+</div>
