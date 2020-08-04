@@ -1,0 +1,287 @@
+
+
+review:
+	css:
+		1.什么是css？
+			层叠样式表
+			特点：
+				1.从上到下依次解析
+				2.大小写敏感
+					width:100px  widtH:100px;
+		2.语法
+			1.属性名和属性值之间使用：隔开
+				多对属性之间·使用;隔开
+				最后一堆属性可以不加分号
+
+				<div style="width:100px;height:100px;"></div>
+
+				<style>
+					选择器{
+						width:100px;
+					}
+				</style>
+			2.速记写法
+				简写形式
+				border:1px solid red;
+				padding:10px;
+				padding:10px 20px;
+				padding:10px 20px 30px;
+				padding:10px 20px 30px 40px;
+			margin:
+
+			3.注释
+				1.注释写法
+					/*注释内容*/
+				2.注释的作用
+					解释说明
+					更具有可读性/更加便于维护和管理
+				3.注释不能嵌套使用
+					/*
+						/*inner*/
+					*/
+		3.html中引入css
+			1.行内样式
+				style属性
+			2.内联样式
+				在html中嵌入style标签
+				<style>
+					选择器{
+						css语法
+					}
+				</style>
+			3.外部引入
+				建议使用:link标签
+				@import url()
+
+
+	优先级：
+		行内样式>内联/外部引入
+
+		<style>
+			#one{
+				background:red
+			}
+
+		</style>
+		<link rel="stylesheet" href="outer.css">
+		outer.css:
+			div{
+				background:blue
+			}
+
+		<div id='one'></div>
+
+
+4.选择器
+	标签选择器/元素选择器
+	id选择器：
+		#value
+	类选择器：
+		.value
+
+	普遍选择器：
+		*
+		*{
+			margin:0px;
+			padding:0px
+		}
+
+		div *{
+			color:red;
+		}
+
+	后代选择器
+		>：选择当前元素的直接子元素
+		空格：选择当前元素的所有后代元素，包括孙代元素
+
+		<div>
+			<div>
+				<div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	c
+		~:选择当前元素之后的所有兄弟
+			#one~div
+			#one~*
+
+	多选择器：
+		使用逗号连接多个选择器
+		div,p{
+
+		}
+		#one,div.two,[id]{
+
+		}
+	组合选择器:
+		直接连接到一起使用
+		div.one{}
+	属性选择器：
+		[id]
+		[class='one']
+		[class~='one']
+		[class^='one']
+		[class$='one']
+		[class*='one']
+	伪类选择器：
+		:伪类名称
+
+		:first-child{}
+		:last-child{}
+		:nth-child(number/odd/even){}
+
+		:hover
+		:active
+		:link
+		:visited
+		l->v->h->a
+
+		div:first-child{
+
+		}
+		div :first-child{
+
+		}
+		p:first-child{
+
+		}
+
+		<div>
+			<span></span>
+			<p></p>
+			<a href=""></a>
+			<ul></ul>
+			<div></div>
+		</div>
+
+
+	伪元素选择器：
+		::伪元素名称
+		::first-letter{color:red}
+		::first-line
+		::seclection
+		::before
+			content:text/url()
+		::after
+
+
+		<div><span>h</span>ello</div>
+		<div>
+			<span>11.11</span>  32.32
+		</div>
+
+选择器优先级：
+	
+	特性值越大，优先级越高，当特性值相同时，越靠下的优先级越高
+
+	基础值：
+		style属性：1000
+		id选择器：100
+		类/属性/伪类:10
+		元素/伪元素：1
+
+		div#one
+
+	!important不计入特性值的计算
+
+	-----------------
+1.如何选择元素？
+	选择器
+2.如何设置样式？
+
+	继承：
+		inherit;/*继承父类的属性*/
+			
+		initial;/*不继承父类属性
+
+	颜色单位：
+		1.关键字
+			blue
+			lightblue
+		2.rgb(r,g,b):0-255之间
+		3.rgba(r,g,b,a):
+			a:0-1之间：
+				0代表完全透明 1代表完全不透明
+		4.16进制的颜色值
+
+			拾色器/取色器：
+
+
+
+	尺寸单位:
+		1.px 绝对单位
+			width:100px;
+		2.em 相对单位
+		3.百分比 相对单位
+			<div> 100px
+				<p style='width:100%'></p>
+			</div>
+
+		c:/windows/Fonts
+		控制面板-》外观/文字
+
+网络字体：
+	1.下载对应字体
+
+	2.设置字体
+	3.引用字体
+字体图标库：
+	fontawesome：
+		.css
+		<span class='fa fa-xxx'></span>
+
+
+
+		outer.css
+			.one{
+				color:red
+			}
+		index.html:
+			<div class='one'></div>
+
+	iconfont
+		<i class='iconfont xxxx'></i>
+
+
+img:
+	特殊的行内元素
+	私有属性：width height
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

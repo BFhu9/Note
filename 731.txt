@@ -1,0 +1,196 @@
+
+review------------
+	文本样式：
+		word-spacing:
+		letter-spacing
+		word-wrap:break-word
+
+		overflow:
+			hidden
+			scroll
+		width
+		height
+		max-width
+		max-height
+		min-width
+		min-height
+
+		元素的隐藏和显示：
+			display:
+				none:隐藏元素时同时隐藏元素所占据的空间
+				block
+			visibility:
+				hidden：不隐藏元素所占据的空间
+					改变了元素的透明度
+				visible
+
+
+	列表样式：
+		list-style:
+			list-style-type:
+			list-style-position:
+			list-style-image:url()
+		line-height:
+	表格样式：
+		table:
+			border-collapse：
+			caption-side:left/right/top/bottom
+
+
+	盒子模型:
+		盒子=content+padding+border+margin;
+
+
+
+		box-sizing:content-box/border-box;
+		标准盒子：
+			width-->content
+		边框盒子：
+			width-->盒子
+
+			<img src="" alt="">
+				src
+				alt
+				width
+				height
+	盒子样式
+		背景：
+			background:
+				-color:
+				-image:url()
+				-repeat:
+				-clip:
+				-origin:
+				-position:
+				-size:100px 100px;
+					  100% 100%;
+					  cover:
+					  contain:
+				-attachment:
+		边框:
+			border:
+				1px solid red
+
+			border-image:
+				border-image-source:url()
+				border-image-slice:number(不写单位，默认单位px);
+
+				border-image-repeat:
+					repeat
+					space
+					round
+
+------------------------------------
+html4:
+	<div class="outer">
+		<div id="center">
+			<div class='header'>
+				<div class='header_top'>
+					<div class='header_top_left'></div>
+					<div class='header_top_right'></div>
+				</div>
+				<div class='header_bottom'></div>
+			</div>
+			<div class='center'></div>
+			<div class='footer'></div>
+		</div>
+	</div>
+
+
+html5:
+<body>
+	<div class="outer">
+		<div id="center">
+			<header>
+				<div class='header_top'>
+					<se
+						1.display:
+							inline
+							block
+							inline-blockction class='header_top_left'>
+						<span></span>
+						<span></span>
+					</section>
+					<section class='header_top_right'></section>
+				</div>
+				<div class='header_bottom'></div>
+			</header>
+			<article></article>
+			<footer></footer>
+		</div>
+	</div>
+</body>
+
+
+
+
+
+
+------------------------------------
+布局：
+	默认文档流：
+		从上到下从左到右的基础文档流
+
+
+	1.display:
+		inline:将块级元素转换为行内元素
+		block：将行内元素转换为块级元素
+		inline-block：将当前元素转换为兼具行内和块级元素特性的元素
+
+
+	2.浮动布局
+		float:
+			left/right
+
+		浮动元素对于文字不会遮挡
+
+
+		块级元素设置了浮动属性之后失去了独占一行的特性
+		行内元素设置了浮动属性之后，可以设置宽高属性
+
+	浮动何时停止？
+		1.遇到父级边框时停止浮动
+		2.遇到其他浮动元素时停止浮动
+	清除浮动：
+		clear:
+			left
+			right
+			both
+		1.在所有浮动元素之后添加一个块级元素
+			给块级元素设置清除浮动属性
+		2.给所有浮动元素的父元素添加::after{
+			content:'';
+			display:block;
+			clear:left
+		}
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+
+review----------
+
+	继承：
+		initial：不继承
+		inherit：继承
+
+	颜色值：
+		1.关键字
+		2.rgb():0-255之间
+		3.rgba():a:透明度0-1之间
+		4.#16进制颜色值
+			#fff
+			#ccc
+	尺寸：
+		1.像素值px
+			绝对单位
+		2.em	
+			相对单位
+			1em=16px
+		3.百分比
+			相对单位
+			相对父级元素
+			%
+			div>p
+
+
+	文本样式：
+		color
+		font-size
+		font-weight
+		font-style
+		text-indent
+		text-transform
+		text-decoration
+		font-family:
+			字体栈：
+			<div>hello</div>
+			div{
+				font-family:'宋体',"黑体",'娃娃体'
+			}
+
+			网络字体：
+			 1.下载字体
+			 	xxx
+			 2.声明字体
+			 	@font-face{
+			 		font-family:'wangym';
+			 		src:url(xxxx);
+			 	}
+			 3.使用字体
+			 	div{
+			 		font-family:'wangym'
+			 	}
+		字体图标库：
+			fontawesome：
+				.css
+				1.引入外部样式文件
+					link标签
+				2.使用行内元素
+					span
+					<i class='fa fa-xxx'></i>
+
+			iconfont:
+				.css
+				1.引入css
+				2.使用
+					<span></span>
+					<i class='iconfont xxxx'></i>
+
+
+列表样式：
+	list-style-type
+	list-style-position
+	list-style-image:url()
+	line-height:
+
+	
+	ul
+		li
+
+	ol:start reversed:布尔值
+		li
+	标题列表：
+
+	dl
+		dt:标题项
+		dd:列表项
+
+-------
+word-spacing:单词之间的间距
+letter-spacing：字符之间的间距
+word-wrap: break-word:超出父元素宽度是否换行显示
+
+overflow:超出父元素部分如何设置
+	hidden：隐藏
+	scroll：以滚动条形式展示
+
+width
+height
+max-width
+max-height
+min-width
+min-height
+
+元素的隐藏和显示
+	display:
+		none:元素的隐藏
+			隐藏元素所占据的空间
+		block：元素的显示
+	visibility
+		hidden：元素的隐藏
+			相当于修改了元素的透明度
+			保留元素所占据的空间
+		visible:元素的显示
+
+设置表格中的单元素合并：
+	border-collapse: collapse;
+设置表哥标题位置：
+	caption-side: top/left/right/bottom
+------------------------------
+盒子模型：
+
+	盒子宽度=content+padding+border
+	标准盒子/默认盒子/w3c盒子
+		box-sizing:content-box;
+			<div></div>
+			特点：
+				width-->元素内容
+
+	边框盒子/怪异盒子：
+		box-sizing:border-box;
+		特点：
+			width-->盒子
+
+
+
+margin:0 auto
+
+设置圆角边框：
+	border-radius
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

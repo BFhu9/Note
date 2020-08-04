@@ -1,0 +1,338 @@
+
+
+review-----------
+
+	css:
+		层叠样式表
+
+
+	1.什么是css？
+		作用：美化html
+		不能脱离html而单独存在
+
+
+	2.语法
+		选择器{
+			key:value;
+			key1:value1;
+		}
+
+		注释：
+			/**/
+
+		速记写法；
+			border
+			border-image:
+			padding:10px/
+			margin
+			backgorund
+			list-style:
+				list-style-type
+				list-style-position
+				list-style-image
+
+	3.html中引入css
+		1.行内样式
+			style属性
+
+		2.内嵌/内联样式
+			style标签
+
+		3.外部引入
+			建议：link标签
+			@import url()
+
+
+	优先级：
+		行内样式》内联=外部引入
+
+
+	4.选择器
+
+		标签/元素选择器
+		id
+			#one
+		class:
+			.one
+
+		普遍：
+			*
+
+		后代选择器：
+			>
+			空格
+
+		兄弟选择器：
+			+
+			~
+
+		组合：
+			div#one
+			div.one
+			div[]
+		多选择器:
+			逗号
+			div,#one,p{}
+
+		属性选择器：
+			[class]
+			[class='one']
+			[class~='one']
+			[class*='one']
+			[class^='one']
+			[class$='one']
+
+		伪类：
+			:伪类名称
+
+			:first-child
+			:last-child
+			:nth-child(number/odd/even)
+
+			:hover
+			:link
+			:active
+			:visited
+
+			link->visited->hover->active
+
+
+
+		伪元素：
+			::伪元素名称
+			伪元素：行内元素
+
+			::first-letter{
+
+			}
+
+			::first-line
+			::selection
+			::before
+			::after:
+				content:''/url()
+
+
+
+	5.选择器优先级
+		
+		特性值：
+			style属性：1000
+			id：100
+			类/伪类/属性：10
+			元素/伪元素：1
+
+		特性值越大的优先级越高，特性值相同，越靠下的优先级越高
+
+
+
+		!important:不计入特性值的计算
+
+	6.文本样式
+		font-size
+		font-family
+		font-weight
+		text-
+
+		网络字体：
+			1.下载字体
+			2.声明字体
+				@font-face{}
+			3.使用
+				div{
+					font-family:''
+				}
+
+		字体图标库：
+			fontawesome:
+				<i class='fa fa-xxx'></i>
+			iconfont
+				<i class='iconfont xxxxx'></i>
+
+
+			html：
+				span
+				<i class=''></i>
+
+
+	7.列表样式
+		list-style:
+		line-height:
+	8.表格样式:
+		capsition-side
+		border-collspase
+	9.盒子样式:
+		盒子=content+padding+border
+		box-sizing:content-box/border-box
+		标准盒子：
+			width-->content
+		边框盒子：
+			width-->盒子
+
+		背景样式：
+			backgroud:
+				-color
+				-size
+				-image
+				-repeat
+				-clip
+				-origin
+				-attachment
+				-position
+
+		边框样式:
+			border:1px solid red
+			border-image:
+
+
+	10.布局
+		默认文档流：
+			从上到下 从左到右
+
+		布局规则：
+			先进行行级布局，再进行列级布局
+
+		1》display属性
+			inline
+			block
+			inline-block
+
+		2>浮动
+			float:left/right
+			
+			特性：
+				不会遮盖文字
+				设置给块级元素：不会独占一行
+				设置给行内元素：可以设置宽高属性
+
+			清除浮动：
+				clear:left/right/both
+				1.在浮动元素和非浮动元素之间手动添加一个块级元素
+				2.使用伪元素选择器{
+					content:'';
+					display:block;
+					clear:
+				}
+
+			默认停止浮动：
+				1.遇到父级元素边框
+				2.遇到其他浮动元素
+
+----------------------------------
+		标记语言：
+			<div>1+1</div>
+			特点：
+				只能被读取，本身不具有逻辑能力和行为能力
+		脚本语言：
+			javascript：
+				console.log(1+1);//2
+
+			特点：
+				本身具有逻辑能力和行为能力
+				需要解析执行
+				：需要js解析器解析执行
+
+
+		编译语言：
+			java:
+				system.out.print(1+1);//2
+			特点：
+				本身具有逻辑能力和行为能力
+				需要编译运行
+				.java-->.class
+
+
+
+
+
+
+		3》定位布局
+			position:
+				static:静态布局
+				absolute:绝对定位
+					特点：
+					1.脱离默认文档流
+					2.不占据定位前空间
+					3.默认情况下，绝对定位元素根据body元素左上角进行定位
+					4.当父元素具有定位属性时，子定位元素根据父元素左上角进行定位
+
+				relative:相对定位
+					特点：
+						1.默认情况下，元素根据元素本身的位置进行定位
+						2.不脱离默认文档流
+						3.占据定位前空间
+				fixed:固定定位
+					特点和绝对定位相似
+					使用了固定定位的元素，不会随着滚动条的滚动而滚动
+				sticky:粘滞定位
+					relative+fixed
+					元素在到达固定点之前，使用relative定位，在到达固定点之后，使用fixed定位
+
+
+
+
+
+		配合属性：	
+			top
+			left
+			right
+			bottom
+
+
+
+
+----------------
+外边距合并问题：
+	1.父子级
+		1.给父元素添加边框属性
+		2.给父元素/子元素添加浮动属性
+		3.给父元素/子元素添加position:absolute属性
+		4.给父级元素设置overflow:hidden属性
+		5.给父子级添加display:inline-block属性
+		6.将本应该设置给子元素的外边距设置给父元素的内边距
+
+
+	2.兄弟级
+		解决：将本应该设置给两个元素的外边距设置给一个元素
+
+		合并规则：
+			1.两个数值均为正数时，取较大一个
+			2.两个数值均为负数时，取较小的一个
+			3.当两个数值一正一负时，直接想加
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

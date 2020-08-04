@@ -1,0 +1,262 @@
+
+前端三要素：
+	html：木偶
+	css：化妆
+	javascript：动态展示（跳舞）
+
+
+css:
+	1.什么是css？
+		cascading style sheets
+		层叠样式表
+		div
+
+	2.css的语法
+		1.属性名和属性值之间使用:隔开
+			多对属性之间使用;隔开
+			最后一对属性可以不加分号
+			id="one"
+			class='one'
+			style='根据css语法设置'
+			title='one'
+
+			<div style="width:100px;height:100px;color:red;"></div>
+
+			<style>
+				选择器{
+					width:100px;
+					height:100px;
+					color:red
+					...
+				}
+			</style>
+
+			<div></div>
+
+		2.速记写法
+			简写形式
+			border:1px solid red;
+				border-width:1px;
+					border-top-width
+					border-left-width
+					border-right-width
+					border-bottom-width
+
+				border-style
+					border-top-style
+					border-bottom-style
+					。。。。
+				border-color
+
+		盒子=内容区+内边距+边框+外边距
+					padding  margin
+
+		
+		padding-top:10px;
+		padding-left:10px;
+		padding-right:10px;
+		padding-bottom:10px;
+
+	-->
+	padding:10px;//上下左右均为10px
+	padding:10px 20px;//上下10px 左右20px
+	padding:10px 20px 30px;//上10px 左右20px 下30px
+
+	padding:10px 20px 30px 40px;//上 右 下 左
+
+	margin：同上
+
+		3.注释
+			1.注释写法
+				/*注释内容*/
+			2.注释的作用
+				解释说明
+				更好的维护和管理
+			3.注释不能嵌套使用
+				<!--注释
+					<!--inner-->
+				内容-->
+
+				/*
+					/**/
+				*/
+	3.html中引入css的方式
+		1.行内样式
+			style属性
+			<div style=''></div>
+		2.内联样式
+			style标签
+			<style>
+				div{
+					css语法
+				}
+			</style>
+
+		3.外部引入
+			创建.css为后缀名的文件
+			link标签：先加载css
+			@import url():不建议使用，因为先加载html
+
+引入css的优先级问题：
+	行内样式>内联样式/外部引入
+
+	就近原则：哪一种设置方式更靠近元素，哪一种方式的优先级更高
+
+	4.选择器
+		标签选择器/元素选择器
+			根据标签名称选择一类元素
+
+		id选择器：
+			通过id属性选择一个元素
+			#value
+			<div id='one'></div>
+
+			#one
+		类选择器：
+			class
+			.value
+		普遍选择器：
+			*  ： 所有
+		后代选择器：
+			selector1>selector2:选择直接子元素
+			selector1 selector2:选择所有后代元素，包含孙代元素
+		兄弟选择器：
+			+:选择当前元素之后的一个兄弟元素     #one+div      div+#one   的区别
+			~:选择当前元素之后的所有兄弟元素
+		属性选择器：
+			[class]:选择当前页面中具有class属性的元素
+			[class='one']:选择当前页面中具有class属性，并且属性值为one的元素
+			[class~='one']:选择当前页面中具有class属性，并且属性值之一为one的
+			[class^='o']:选择当前页面中具有class属性，并且属性值以o字符开头
+			[class$='o']:选择当前页面中具有class属性，并且属性值以o字符结尾
+			[class*='o']:选择当前页面中具有class属性，并且属性值中包含o字符
+		多选择器：
+			使用逗号隔开多个选择器
+
+			div	
+			p
+
+			div{
+				width:100px;
+				height:100px
+			}
+			p{
+				width:100px;
+				height:100px;
+			}
+				-->
+			div,p{
+				width:100px;
+				height:100px;
+			}
+
+		#one,.two,p{
+
+		}
+
+		<div>
+			<ul class='one'>
+				li*3
+			</ul>
+			<ul class='two'>
+				li*3
+			</ul>
+		</div>
+		<p class='two'></p>
+
+		div .one,.two{
+
+		}
+
+		div .one,div .two{
+
+		}
+
+		table tr td
+
+		组合选择器：
+			将多个选择器组合到一起使用
+			div.one{
+
+			}
+
+
+			<div class="one"></div>
+			<div class='two'></div>
+			<div class='three'></div>
+			<p class='one'></p>
+
+		伪类选择器：
+			:伪类名称
+
+			:first-child
+			:last-child
+			:nth-child(number/odd/even)
+
+			和状态相关的：
+			:hover:当鼠标悬停在元素上时
+			:active：当鼠标按下时
+			:link：当鼠标未被点击时
+			:visited：当点击过之后的一个状态
+
+	设置顺序：
+		link-》visited--〉hover--》active
+
+		伪元素选择器：
+			<div>hello</div>
+
+			::伪元素的名称
+			::first-letter:第一个字符
+			::first-line：第一行
+			::seclection:文本被选中时
+
+			::before:在当前元素内容之前
+				content:text/url()
+			::after：在当前元素内容之后
+
+				
+----------------------------------------
+
+选择器优先级：
+	!important:不计入特性值中，使用了该属性的样式优先级最高,不建议使用
+	
+	优先级需要根据特性值来计算，特性值越大，优先级越高，特性值相同，越靠下的优先级越高
+
+	style属性中:1000
+	id选择器:100
+	类选择器/属性选择器/伪类选择器:10
+	元素选择器/伪元素选择器：1
+
+	div#one{//number=101
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

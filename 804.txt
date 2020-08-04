@@ -1,0 +1,123 @@
+
+
+review----------
+
+定位：
+	position:
+		static:静态布局
+		absolute:绝对定位
+			特点：
+				1.脱离默认文档流
+				2.不保留定位前空间
+				3.默认情况下，根据body左上角进行定位
+				4.如果父元素具有定位属性，根据父元素左上角进行定位
+
+		relative：相对定位
+			特点：
+				1.相对定位的元素根据元素本身的位置进行定位
+				2.不脱离默认文档流
+				3.保留定位前空间
+		fixed：固定定位
+			特点和绝对定位相似
+			使用了固定定位的元素不会跟着滚动条的滚动而滚动
+
+		sticky:粘滞定位
+
+			relative+fixed
+
+
+
+
+
+
+		配合属性：
+			top
+			left
+			right
+			bottom
+
+
+
+
+外边距合并问题：
+	父子：
+
+	兄弟
+
+z-index：number
+	设置元素的堆叠顺序
+	数值越大，元素越靠上
+	元素必须具有绝对定位属性
+
+
+
+4.伸缩盒布局
+
+	display:flex;
+		将当前盒子变成一个可伸缩的盒子
+		所有子元素自动成为该盒子的一个成员项item
+		子元素的浮动属性失效
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		--->
+		简写形式：
+			flex-flow: row wrap
+
+		align-items: 
+			设置子元素在y轴上如何显示
+			默认：拉伸高度stretch
+			center:y周中心位置
+			flex-start
+			flex-end
+		justify-content:
+			设置子元素在x轴方向的显示
+			flex-start
+			flex-end
+
+
+
+
+		子元素：
+			flex:number:当前子元素占据父元素剩余空间的份数
+
+
+如何让元素在父元素中水平或垂直居中：
+	行内元素：
+		text-align:center;
+		line-height:height;
+
+	块级元素：
+		1.给父元素设置display:flex;
+			并且设置:
+			align-items:center;
+			justify-content:center;
+		2.给父元素一个定位属性，子元素使用绝对定位，并且使用配合属性left:50%;top:50%;让子元素左上角移动到父元素中心位置；然后再让子元素使用margin-left:-width/2;margin-top:-height/2;
+
+		3.给父元素一个定位属性，给子元素一个绝对定位。然后给子元素的所有配合属性设置为0px并且给子玉安素设置margin:auto
+
+		4.给父元素设置一个display:flex;子元素设置margin:auto
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
